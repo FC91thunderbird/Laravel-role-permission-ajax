@@ -11,13 +11,13 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/favicon/favicon.ico" />
 
-    @vite(['resources/admin/assets/vendor/fonts/tabler-icons.css','resources/admin/assets/vendor/css/rtl/core.css" class="template-customizer-core-css',
-    'resources/admin/assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css',
-    'resources/admin/assets/css/demo.css',
-    'resources/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css',
-    'resources/admin/assets/vendor/js/helpers.js',
-    'resources/admin/assets/vendor/js/template-customizer.js',
-    'resources/admin/assets/js/config.js','resources/admin/assets/vendor/libs/toastr/toastr.css','resources/admin/assets/vendor/css/pages/page-auth.css',])
+    @vite(['resources/assets/admin/vendor/fonts/tabler-icons.css','resources/assets/admin/vendor/css/rtl/core.css" class="template-customizer-core-css',
+    'resources/assets/admin/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css',
+    'resources/assets/admin/css/demo.css',
+    'resources/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.css',
+    'resources/assets/admin/vendor/js/helpers.js',
+    'resources/assets/admin/vendor/js/template-customizer.js',
+    'resources/assets/admin/js/config.js','resources/assets/admin/vendor/libs/toastr/toastr.css','resources/assets/admin/vendor/css/pages/page-auth.css',])
 
 </head>
 <body>
@@ -76,13 +76,13 @@
 
 
 
-    @vite(['resources/admin/assets/vendor/libs/jquery/jquery.js',
-    'resources/admin/assets/vendor/libs/popper/popper.js',
-    'resources/admin/assets/vendor/js/bootstrap.js',
-    'resources/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js',
-    'resources/admin/assets/vendor/js/menu.js',
-    'resources/admin/assets/js/main.js',
-    'resources/admin/assets/vendor/libs/toastr/toastr.js'])
+    @vite(['resources/assets/admin/vendor/libs/jquery/jquery.js',
+    'resources/assets/admin/vendor/libs/popper/popper.js',
+    'resources/assets/admin/vendor/js/bootstrap.js',
+    'resources/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbar.js',
+    'resources/assets/admin/vendor/js/menu.js',
+    'resources/assets/admin/js/main.js',
+    'resources/assets/admin/vendor/libs/toastr/toastr.js'])
 
 </body>
 

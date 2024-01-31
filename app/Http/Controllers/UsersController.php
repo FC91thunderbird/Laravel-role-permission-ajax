@@ -89,8 +89,6 @@ class UsersController extends Controller
             $input = $request->all();
             $user = User::find($id);
 
-            // dd($request->file('image'));
-
             if (!$user) {
                 return response()->json(['success' => false, 'message' => 'User not Found']);
             }

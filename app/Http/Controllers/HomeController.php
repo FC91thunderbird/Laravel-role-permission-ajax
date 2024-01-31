@@ -2,40 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    function index()
     {
-        $this->middleware('auth');
+        $banners = Banner::all();
+        $categories = Category::orderBy('name', 'asc')->get();
+        $newArrival = Product::with('category', 'subcategory')->get();
+        return view('user.pages.home.home', compact('banners', 'categories','newArrival'));
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    function subcategory($catSlug)
     {
-        return view('home');
+        $category = Category::where('slug', $catSlug)->first();
+        $subcategories = Subcategory::where('cat_id', $category->id)->get(); 
+
+        $products = Product::all();
+
+        return view('user.pages.home.subcategory', compact('category','subcategories','products'));
     }
 
-    function admin(){
-        echo "admin Page";
-        return view('admin.pages.dashboard');
+    function SubcategoryWiseproducts($subcatSlug){
+        $subcategory = Subcategory::where('slug', $subcatSlug)->first();
+        $products = Product::with('category', 'subcategory')->where('sub_id', $subcategory->id)->get();
+        $newArrival = Product::with('category', 'subcategory')->get();
+        return view('user.pages.home.productsList', compact('subcategory','products','newArrival'));
     }
 
-    function manager(){
-        echo "manager Page";
-    }
-
-    function user(){
-        echo "User PAge";
+    function singleProduct($productSlug){
+        $product = Product::with('category', 'subcategory')->where('slug', $productSlug)->first();
+        return view('user.pages.home.singleProduct', compact('product'));
     }
 }
